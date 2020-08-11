@@ -31,7 +31,7 @@ logger.trace("Hello", "World");
 ### Log at Different Levels
 ```typescript
 const logger = new Logger('app');
-Logger.level = 'INFO';
+Logger.setLevel('INFO');
 logger.error('Something happened');         // Will go out
 logger.trace('Small bit');                  // Won't go out
 logger.silent('Specific debug');            // Will never go out if 'app' is not on Logger.filterIn

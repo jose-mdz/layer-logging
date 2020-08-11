@@ -20,7 +20,7 @@
  *  b) Log at different levels
  *  ```
  *  const logger = new Logger('app');
- *  Logger.level = 'INFO';
+ *  Logger.setLevel('INFO');
  *  logger.error('Something happened');         // Will go out
  *  logger.trace('Small bit');                  // Won't go out
  *  logger.silent('Specific debug');            // Will never go out if 'app' is not on Logger.filterIn
@@ -37,10 +37,10 @@ export class Logger{
     private static _level: LogLevel = 'TRACE';
 
     // Static getter
-    static get level(): LogLevel{ return Logger._level};
+    static getLevel(): LogLevel{ return Logger._level};
 
     // Static setter, avoids the level being set to SILENT
-    static set level(value: LogLevel){
+    static seLevel(value: LogLevel){
         if(value === 'SILENT') {
             throw  `Level can't be set to ${value}`;
         }
@@ -135,7 +135,7 @@ export class Logger{
         }
 
         if(!forceIn) {
-            if(this.levelNumber(level) > this.levelNumber(Logger.level)) {
+            if(this.levelNumber(level) > this.levelNumber(Logger.getLevel())) {
                 return;
             }
         }
