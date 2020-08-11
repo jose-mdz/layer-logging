@@ -2,8 +2,8 @@ export declare type LogLevel = 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'TRACE' | '
 export declare type LogConsumer = (message?: any, ...optionalParams: any[]) => void;
 export declare class Logger {
     private static _level;
-    static get level(): LogLevel;
-    static set level(value: LogLevel);
+    static getLevel(): LogLevel;
+    static seLevel(value: LogLevel): void;
     static filterOut: string[];
     static filterIn: string[];
     static consumers: {
