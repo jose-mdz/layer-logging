@@ -1,6 +1,7 @@
 # layer-logging
 
 Manages logging for your app
+
 [![npm](https://img.shields.io/npm/v/layer-logging.svg)](https://www.npmjs.com/package/layer-logging)
 [![Build Status](https://travis-ci.org/menendezpoo/layer-logging.svg?branch=master)](https://travis-ci.org/menendezpoo/layer-logging)
 [![Coverage Status](https://coveralls.io/repos/github/menendezpoo/layer-logging/badge.svg?branch=master)](https://coveralls.io/github/menendezpoo/layer-logging?branch=master)
