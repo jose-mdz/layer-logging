@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "mocha -u bdd -r ts-node/register --recursive test/**/*.ts",
+    "test": "nyc mocha -u bdd -r ts-node/register --recursive test/**/*.ts",
     "coverage": "nyc npm test",
     "travis": "nyc report --reporter=text-lcov | coveralls"
   },
