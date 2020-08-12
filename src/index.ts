@@ -40,7 +40,7 @@ export class Logger{
     static getLevel(): LogLevel{ return Logger._level};
 
     // Static setter, avoids the level being set to SILENT
-    static seLevel(value: LogLevel){
+    static setLevel(value: LogLevel){
         if(value === 'SILENT') {
             throw  `Level can't be set to ${value}`;
         }

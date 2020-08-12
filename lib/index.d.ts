@@ -3,7 +3,7 @@ export declare type LogConsumer = (message?: any, ...optionalParams: any[]) => v
 export declare class Logger {
     private static _level;
     static getLevel(): LogLevel;
-    static seLevel(value: LogLevel): void;
+    static setLevel(value: LogLevel): void;
     static filterOut: string[];
     static filterIn: string[];
     static consumers: {

@@ -56,7 +56,7 @@ describe(`Logger`, function () {
 
         Logger.filterOut = [];
         Logger.filterIn = [];
-        Logger.level = 'TRACE';
+        Logger.setLevel('TRACE');
     });
 
     after(function () {
@@ -65,7 +65,6 @@ describe(`Logger`, function () {
 
     it('should log a simple error', function () {
 
-        Logger.level = 'TRACE';
         const a = new Logger();
         const word = randomWord();
 
@@ -78,7 +77,6 @@ describe(`Logger`, function () {
 
     it('should log a simple warn', function () {
 
-        Logger.level = 'TRACE';
         const a = new Logger();
         const word = randomWord();
 
@@ -91,7 +89,6 @@ describe(`Logger`, function () {
 
     it('should log a simple info', function () {
 
-        Logger.level = 'TRACE';
         const a = new Logger();
         const word = randomWord();
 
@@ -104,7 +101,6 @@ describe(`Logger`, function () {
 
     it('should log a simple debug', function () {
 
-        Logger.level = 'TRACE';
         const a = new Logger();
         const word = randomWord();
 
@@ -117,7 +113,6 @@ describe(`Logger`, function () {
 
     it('should log a simple trace', function () {
 
-        Logger.level = 'TRACE';
         const a = new Logger();
         const word = randomWord();
 
@@ -130,7 +125,6 @@ describe(`Logger`, function () {
 
     it('should NOT log a simple silent', function () {
 
-        Logger.level = 'TRACE';
         const a = new Logger();
         const word = randomWord();
 
@@ -143,13 +137,13 @@ describe(`Logger`, function () {
     it('should not allow the level to be set to SILENT', function () {
 
         assert.throws(() => {
-            Logger.level = 'SILENT';
+            Logger.setLevel('SILENT');
         });
 
     });
 
     it('should correctly print at level DEBUG', function () {
-        Logger.level = 'DEBUG';
+        Logger.setLevel('DEBUG');
         const a = new Logger();
         const word = randomWord();
 
@@ -169,7 +163,7 @@ describe(`Logger`, function () {
     });
 
     it('should correctly print at level INFO', function () {
-        Logger.level = 'INFO';
+        Logger.setLevel('INFO');
         const a = new Logger();
         const word = randomWord();
 
@@ -189,7 +183,7 @@ describe(`Logger`, function () {
     });
 
     it('should correctly print at level WARN', function () {
-        Logger.level = 'WARN';
+        Logger.setLevel('WARN');
         const a = new Logger();
         const word = randomWord();
 
@@ -209,7 +203,7 @@ describe(`Logger`, function () {
     });
 
     it('should correctly print at level ERROR', function () {
-        Logger.level = 'ERROR';
+        Logger.setLevel('ERROR');
         const a = new Logger();
         const word = randomWord();
 
@@ -229,7 +223,6 @@ describe(`Logger`, function () {
     });
 
     it('should correctly print at level TRACE', function () {
-        Logger.level = 'TRACE';
         const a = new Logger();
         const word = randomWord();
 
@@ -274,7 +267,7 @@ describe(`Logger`, function () {
         const a = new Logger(inWord);
         const word = randomWord();
 
-        Logger.level = 'ERROR';
+        Logger.setLevel('ERROR');
         a.trace(word);
 
         assert.strictEqual(out_TRACE.length, 0);
@@ -293,7 +286,7 @@ describe(`Logger`, function () {
         const a = new Logger(randomWord());
         const word = randomWord();
 
-        Logger.level = 'ERROR';
+        Logger.setLevel('ERROR');
         a.trace(word);
 
         assert.strictEqual(out_TRACE.length, 0);
@@ -311,7 +304,7 @@ describe(`Logger`, function () {
         const a = new Logger(inWord);
         const word = randomWord();
 
-        Logger.level = 'ERROR';
+        Logger.setLevel('ERROR');
         a.trace(word);
 
         assert.strictEqual(out_TRACE.length, 0);
@@ -340,7 +333,6 @@ describe(`Logger`, function () {
 
         Logger.voidAllConsumers();
 
-        Logger.level = 'TRACE';
         const a = new Logger();
         const word = randomWord();
 
